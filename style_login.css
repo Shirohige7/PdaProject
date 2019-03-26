@@ -16,7 +16,7 @@ color: #444;
 
 }
 body{
-	background-image: url("appetizers-chef-cooking-1267320.jpg");
+	background-image: url("images/appetizers-chef-cooking-1267320.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -27,7 +27,7 @@ body{
 	top:0;
 	bottom: 0;
 	left: 0;
-	background-image: url("'da3abb4b.png'");
+	background-image: url("images/'da3abb4b.png'");
 	opacity:0.3;
 	
 	background-repeat:repeat;
