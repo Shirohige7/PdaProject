@@ -6,13 +6,21 @@
     font-style: normal;
 
 }
+html{   
+ width: 100%;   
+height: 100%;   
+  
+color: #444;   
+
+
+}
 h1{
 	color:#4CAF50;
 	font-family: charlotteregular;
 	font-size: 80px;
-	position:fixed;
+	position:absolute;
 	top: 23%;
-	left: 55%;
+	left: 53%;
 	margin-top: -140px;
 	margin-left: -170px;
 	z-index: 3;
@@ -22,6 +30,7 @@ body{
 	background-image: url("images/hunters-race-408744-unsplash.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
+	
 }
 .bckg{
 	position: absolute;
@@ -48,6 +57,8 @@ body{
   color: white; /* White text color */
   border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
   text-align: center;
+	z-index: 20;
+	position: fixed;
 }
 
 #mySidenav a:hover {
@@ -90,8 +101,8 @@ body{
   z-index: 2;
   position: absolute;
   top: 20%;
-  left: 30%;
-  width:900px;
+  left: 28%;
+  width:45%;
 		
     }
 form{
@@ -150,9 +161,15 @@ button{
 
 #userstable {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  font-size:18px;
   border-collapse: collapse;
   width: 100%;
-  background-color: aliceblue;
+  background: rgba(226,226,226,1);
+background: -moz-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 38%, rgba(209,209,209,1) 53%, rgba(254,254,254,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(226,226,226,1)), color-stop(38%, rgba(219,219,219,1)), color-stop(53%, rgba(209,209,209,1)), color-stop(100%, rgba(254,254,254,1)));
+background: -webkit-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 38%, rgba(209,209,209,1) 53%, rgba(254,254,254,1) 100%);
+background: -o-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 38%, rgba(209,209,209,1) 53%, rgba(254,254,254,1) 100%);
+background: -ms-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 38%, rgba(209,209,209,1) 53%, rgba(254,254,254,1) 100%);
   
   margin-top: 15px;
   
@@ -166,9 +183,16 @@ button{
   
 }
 
-#userstable tr:nth-child(even){background-color: #f2f2f2; }
+#userstable tr:nth-child(even){background: rgba(194,194,194,1);
+background: -moz-linear-gradient(top, rgba(194,194,194,1) 0%, rgba(186,186,186,1) 9%, rgba(179,179,179,1) 53%, rgba(217,217,217,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(194,194,194,1)), color-stop(9%, rgba(186,186,186,1)), color-stop(53%, rgba(179,179,179,1)), color-stop(100%, rgba(217,217,217,1)));
+background: -webkit-linear-gradient(top, rgba(194,194,194,1) 0%, rgba(186,186,186,1) 9%, rgba(179,179,179,1) 53%, rgba(217,217,217,1) 100%);
+background: -o-linear-gradient(top, rgba(194,194,194,1) 0%, rgba(186,186,186,1) 9%, rgba(179,179,179,1) 53%, rgba(217,217,217,1) 100%);
+background: -ms-linear-gradient(top, rgba(194,194,194,1) 0%, rgba(186,186,186,1) 9%, rgba(179,179,179,1) 53%, rgba(217,217,217,1) 100%);
+background: linear-gradient(to bottom, rgba(194,194,194,1) 0%, rgba(186,186,186,1) 9%, rgba(179,179,179,1) 53%, rgba(217,217,217,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c2c2c2', endColorstr='#d9d9d9', GradientType=0 ); }
 
-#userstable tr:hover {background-color: #ddd;}
+#userstable tr:hover {background-color: #555;color:seashell;}
 
 #userstable th {
   padding-top: 12px;
@@ -185,4 +209,72 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2ff52', end
   color: white;
   
   
+}
+.container {
+  display: block;
+	
+  position: relative;
+  margin-left: 10px;
+  margin-bottom: 25px;
+  cursor: pointer;
+  
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: grey;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }

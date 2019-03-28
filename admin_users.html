@@ -1,9 +1,10 @@
 <!DOCTYPE HTML>
+
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<title>Admin Page</title>
-		
+		<script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
 		<script type="text/javascript" src="./jQuery/jquery-3.3.1.min.js"></script>
     	
 		<script type="text/javascript">
@@ -16,7 +17,7 @@
 			var role = $("#role").val();
 			var pass = $("#pass").val();
             
-            var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + userid + "</td><td>" + username + "</td><td>" + name + "</td><td>" + lastname + "</td><td>" + role + "</td><td>" + pass + "</td></tr>";
+            var markup = `<tr><td><label class="container"><input type="checkbox" name="record"><span class="checkmark"></span></label></td><td>` + userid + "</td><td>" + username + "</td><td>" + name + "</td><td>" + lastname + "</td><td>" + role + "</td><td>" + pass + "</td></tr>";
             $("table tbody").append(markup);
         });
         
@@ -35,6 +36,7 @@
 	
 	<body>
 		<h1>Users</h1>
+		
 		<div class="bckg"></div>	
 		 <div id="mySidenav" class="sidenav">
 			 <a href="#" id="user">Users</a>
@@ -67,7 +69,7 @@
         </thead>
         <tbody>
             <tr>
-                <td><input type="checkbox" name="record"></td>
+                <td><label class="container"><input type="checkbox" name="record"><span class="checkmark"></span></label></td>
                 <td>1</td>
 				<td>Nosma97</td>
 				<td>Εμμανουήλ</td>
@@ -76,7 +78,7 @@
 				<td>73591</td>
             </tr>
 			<tr>
-                <td><input type="checkbox" name="record"></td>
+				<td><label class="container"><input type="checkbox" name="record"><span class="checkmark"></span></label></td>
                 <td>2</td>
 				<td>PiggyBank</td>
 				<td>Αλέξανδρος</td>
