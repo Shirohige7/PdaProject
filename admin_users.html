@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Admin Page</title>
+		
+		<script type="text/javascript" src="./jQuery/jquery-3.3.1.min.js"></script>
+    	
+		<script type="text/javascript">
+		 $(document).ready(function(){
+        $(".add-row").click(function(){
+            var name = $("#name").val();
+            var email = $("#email").val();
+            var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + name + "</td><td>" + email + "</td></tr>";
+            $("table tbody").append(markup);
+        });
+        
+        // Find and remove selected table rows
+        $(".delete-row").click(function(){
+            $("table tbody").find('input[name="record"]').each(function(){
+            	if($(this).is(":checked")){
+                    $(this).parents("tr").remove();
+                }
+            });
+        });
+    });  
+		</script>
+		<link href="admin_index_style.css" rel="stylesheet" type="text/css" />
+	</head>
+	
+	<body>
+		<div class="bckg"></div>	
+		 <div id="mySidenav" class="sidenav">
+			 <a href="#" id="user">Users</a>
+			 <a href="#" id="products">Products</a>
+			 <a href="#" id="catalog">Catalog</a>
+			 <a href="#" id="serviceorders">Service orders per day</a>
+			 <a href="#" id="orders">Bussines orders per day</a>
+		 </div>
+		<div class="border">
+		<form>
+        <input type="text" id="name" placeholder="Name">
+        <input type="text" id="email" placeholder="Email Address">
+        <input type="button" class="add-row" value="Add Row">
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Select</th>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" name="record"></td>
+                <td>Peter Parker</td>
+                <td>peterparker@mail.com</td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="button" class="delete-row">Delete Row</button>
+		</div>				   
+	</body>
+</html>
