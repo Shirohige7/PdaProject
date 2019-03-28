@@ -9,9 +9,14 @@
 		<script type="text/javascript">
 		 $(document).ready(function(){
         $(".add-row").click(function(){
-            var name = $("#name").val();
-            var email = $("#email").val();
-            var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + name + "</td><td>" + email + "</td></tr>";
+            var username = $("#username").val();
+            var userid = $("#userid").val();
+			var name = $("#name").val();
+            var lastname = $("#lastname").val();
+			var role = $("#role").val();
+			var pass = $("#pass").val();
+            
+            var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + userid + "</td><td>" + username + "</td><td>" + name + "</td><td>" + lastname + "</td><td>" + role + "</td><td>" + pass + "</td></tr>";
             $("table tbody").append(markup);
         });
         
@@ -29,6 +34,7 @@
 	</head>
 	
 	<body>
+		<h1>Users</h1>
 		<div class="bckg"></div>	
 		 <div id="mySidenav" class="sidenav">
 			 <a href="#" id="user">Users</a>
@@ -39,27 +45,48 @@
 		 </div>
 		<div class="border">
 		<form>
+		<input type="number" id="userid" placeholder="ID">
+        <input type="text" id="username" placeholder="Username">
         <input type="text" id="name" placeholder="Name">
-        <input type="text" id="email" placeholder="Email Address">
-        <input type="button" class="add-row" value="Add Row">
+		<input type="text" id="lastname" placeholder="Last name">
+		<input type="text" id="role" placeholder="Role">
+		<input type="text" id="pass" placeholder="Password">
+        <input type="button" class="add-row" value="Add User">
     </form>
-    <table>
+    <table id="userstable">
         <thead>
             <tr>
                 <th>Select</th>
-                <th>Name</th>
-                <th>Email</th>
+                <th>ID</th>
+                <th>Username</th>
+				<th>Name</th>
+                <th>Surname</th>
+                <th>Role</th>
+				<th>Password</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td><input type="checkbox" name="record"></td>
-                <td>Peter Parker</td>
-                <td>peterparker@mail.com</td>
+                <td>1</td>
+				<td>Nosma97</td>
+				<td>Εμμανουήλ</td>
+				<td>Κουτσοσταύρος</td>
+				<td>Admin</td>
+				<td>73591</td>
+            </tr>
+			<tr>
+                <td><input type="checkbox" name="record"></td>
+                <td>2</td>
+				<td>PiggyBank</td>
+				<td>Αλέξανδρος</td>
+				<td>Κελίδης</td>
+				<td>Admin</td>
+				<td>1234</td>
             </tr>
         </tbody>
     </table>
-    <button type="button" class="delete-row">Delete Row</button>
+    <button type="button" class="delete-row">Delete User</button>
 		</div>				   
 	</body>
 </html>
