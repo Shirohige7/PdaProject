@@ -3,21 +3,18 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Admin Page</title>
+		<title>Admin Page Products</title>
 		<script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
 		<script  src="./jQuery/jquery-3.3.1.min.js"></script>
     	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<script>
 		 $(document).ready(function(){
         $(".add-row").click(function(){
-            var username = $("#username").val();
-            var userid = $("#userid").val();
-			var name = $("#name").val();
-            var lastname = $("#lastname").val();
-			var role = $("#role").val();
-			var pass = $("#pass").val();
+            var categoryname = $("#categoryname").val();
+            var categoryid = $("#categoryid").val();
+			
             
-            var markup = `<tr><td><label class="container"><input type="checkbox" name="record"><span class="checkmark"></span></label></td><td>` + userid + "</td><td>" + username + "</td><td>" + name + "</td><td>" + lastname + "</td><td>" + role + "</td><td>" + pass + "</td></tr>";
+            var markup = `<tr><td><label class="container"><input type="checkbox" name="record"><span class="checkmark"></span></label></td><td>` + categoryid + "</td><td>" + categoryname + "</td></tr>";
             $("table tbody").append(markup);
         });
         
@@ -31,11 +28,11 @@
         });
     });  
 		</script>
-		<link href="admin_index_style.css" rel="stylesheet" type="text/css" />
+		<link href="admin_category.css" rel="stylesheet" type="text/css" />
 	</head>
 	
 	<body>
-		<h1>Users</h1>
+		<h1>Category</h1>
 		
 		<div class="bckg"></div>	
 		 <div id="mySidenav" class="sidenav">
@@ -48,48 +45,38 @@
 		 </div>
 		<div class="border">
 		<form>
-		<input type="number" id="userid" placeholder="ID">
-        <input type="text" id="username" placeholder="Username">
-        <input type="text" id="name" placeholder="Name">
-		<input type="text" id="lastname" placeholder="Last name">
-		<input type="text" id="role" placeholder="Role">
-		<input type="text" id="pass" placeholder="Password">
-        <input type="button" class="add-row" value="Add User">
+		
+        
+        
+		<input type="text" id="categoryname" placeholder="Product Category">
+		
+        <input type="button" class="add-row" value="Add Category">
     </form>
     <table id="userstable">
         <thead>
             <tr>
                 <th>Select</th>
                 <th>ID</th>
-                <th>Username</th>
-				<th>Name</th>
-                <th>Surname</th>
-                <th>Role</th>
-				<th>Password</th>
+				<th>Category</th>
+                
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td><label class="container"><input type="checkbox" name="record"><span class="checkmark"></span></label></td>
                 <td>1</td>
-				<td>Nosma97</td>
-				<td>Εμμανουήλ</td>
-				<td>Κουτσοσταύρος</td>
-				<td>Admin</td>
-				<td>73591</td>
+				<td>Alcohol</td>
+				
             </tr>
 			<tr>
 				<td><label class="container"><input type="checkbox" name="record"><span class="checkmark"></span></label></td>
                 <td>2</td>
-				<td>PiggyBank</td>
-				<td>Αλέξανδρος</td>
-				<td>Κελίδης</td>
-				<td>Admin</td>
-				<td>1234</td>
+				<td>Food</td>
+				
             </tr>
         </tbody>
     </table>
-    <button type="button" class="delete-row">Delete User</button>
+    <button type="button" class="delete-row">Delete Category</button>
 		</div>				   
 	</body>
 </html>

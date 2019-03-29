@@ -4,7 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Login page</title>
-
+	<script>
+	var makePath = function(form) {
+  form.action = document.getElementById('myList').value;
+};
+	</script>
 <link href="style_login.css" rel="stylesheet" type="text/css" />
 <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
 
@@ -15,8 +19,10 @@
 <div class="logo">
 	<h1>Welcome</h1>
 	<img src="images/bar.png" alt="logo"/></div>
-<div id="container">       
-<form action="admin_users.html">
+<div id="container">  
+	
+		
+<form onsubmit='makePath(this);'>
 <label for="username">Username:</label>
 <input type="text" id="username" name="username" placeholder="Enter your username here...">
 <label for="password">Password:</label>
@@ -24,7 +30,7 @@
 <div id="lower">
 <label for="myList" style="color:seashell; padding-top: 33px;">Login as :</label>
              <select id = "myList">
-               <option value = "Admin">Admin</option>
+               <option value = "admin_users.html" label="Admin">Admin</option>
                <option value = "Service">Service</option>
                <option value = "Kitchen">Kitchen</option>
                <option value = "Marka">Marka</option>
@@ -32,6 +38,7 @@
 <input type="submit" value="Login" >
 </div>
 </form>
+	
 </div>	
 
 </body>

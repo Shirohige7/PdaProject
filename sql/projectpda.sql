@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `category`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `category` (
-  `product_category_id` int(11) NOT NULL,
+  `product_category_id` int(11) NOT NULL AUTO_INCREMENT,
   `category_name` varchar(30) NOT NULL,
   PRIMARY KEY (`product_category_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -134,10 +134,10 @@ CREATE TABLE `pricecatalog` (
   `product_id` int(11) NOT NULL,
   `product_name` varchar(30) NOT NULL,
   `product_price` float NOT NULL,
-  `product_category` int(11) NOT NULL,
+  `prod_category` int(11) DEFAULT NULL,
   PRIMARY KEY (`product_id`),
-  KEY `product_category` (`product_category`),
-  CONSTRAINT `pricecatalog_ibfk_1` FOREIGN KEY (`product_category`) REFERENCES `category` (`product_category_id`)
+  KEY `prod_category` (`prod_category`),
+  CONSTRAINT `pricecatalog_ibfk_1` FOREIGN KEY (`prod_category`) REFERENCES `category` (`product_category_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -238,4 +238,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-27 20:12:13
+-- Dump completed on 2019-03-30  1:39:48
