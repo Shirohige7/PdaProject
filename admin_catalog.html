@@ -3,18 +3,20 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Admin Page Products</title>
+		<title>Admin Catalog</title>
 		<script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
 		<script  src="./jQuery/jquery-3.3.1.min.js"></script>
     	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<script>
 		 $(document).ready(function(){
         $(".add-row").click(function(){
-            var categoryname = $("#categoryname").val();
-            var categoryid = $("#categoryid").val();
+            var prodname = $("#prodname").val();
+            var price = $("#price").val();
+			var prodcategory = $("#prodcategory").val();
+            var prodid = $("#prodid").val();
 			
             
-            var markup = `<tr><td><label class="container"><input type="checkbox" name="record"><span class="checkmark"></span></label></td><td>` + categoryid + "</td><td>" + categoryname + "</td></tr>";
+            var markup = `<tr><td><label class="container"><input type="checkbox" name="record"><span class="checkmark"></span></label></td><td>` + prodid + "</td><td>" + prodname + "</td><td>" + price + "</td><td>" + prodcategory + "</td></tr>";
             $("table tbody").append(markup);
         });
         
@@ -28,55 +30,47 @@
         });
     });  
 		</script>
-		<link href="admin_category.css" rel="stylesheet" type="text/css" />
+		<link href="admin_catalog_style.css" rel="stylesheet" type="text/css" />
 	</head>
 	
 	<body>
-		<h1>Category</h1>
+		<h1>PriceCatalog</h1>
 		
 		<div class="bckg"></div>	
 		 <div id="mySidenav" class="sidenav">
 			 <a href="admin_users.html" id="user">Users</a>
 			 <a href="admin_p_category.html" id="products">Product Category</a>
-			 <a href="admin_catalog.html" id="catalog">Catalog</a>
+			 <a href="#" id="catalog">Catalog</a>
 			 <a href="#" id="serviceorders">Service orders per day</a>
 			 <a href="#" id="orders">Bussines orders per day</a>
 			 <a href="login.html" id="logout">Logout<i class="fa fa-power-off" ></i></a>
 		 </div>
 		<div class="border">
 		<form>
+		<input type="text" id="prodname" placeholder="Product Name">
+        <input type="text" id="price" placeholder="Product Price">
+        <input type="text" id="prodcategory" placeholder="Product Category">
 		
-        
-        
-		<input type="text" id="categoryname" placeholder="Product Category">
-		
-        <input type="button" class="add-row" value="Add Category">
+        <input type="button" class="add-row" value="Add Product">
     </form>
     <table id="userstable">
         <thead>
             <tr>
                 <th>Select</th>
                 <th>ID</th>
-				<th>Category</th>
+                <th>Name</th>
+				<th>Price</th>
+                <th>Category</th>
                 
+				
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td><label class="container"><input type="checkbox" name="record"><span class="checkmark"></span></label></td>
-                <td>1</td>
-				<td>Alcohol</td>
-				
-            </tr>
-			<tr>
-				<td><label class="container"><input type="checkbox" name="record"><span class="checkmark"></span></label></td>
-                <td>2</td>
-				<td>Food</td>
-				
-            </tr>
+           
+			
         </tbody>
     </table>
-    <button type="button" class="delete-row">Delete Category</button>
+    <button type="button" class="delete-row">Delete User</button>
 		</div>				   
 	</body>
 </html>
