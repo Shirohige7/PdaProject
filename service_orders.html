@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Service page</title>
+		<script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
+		<script  src="./jQuery/jquery-3.3.1.min.js"></script>
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script>
+		 $(document).ready(function(){
+        $(".add-row").click(function(){
+            var ordername = $("#ordername").val();
+            var serviceid = $("#serviceid").val();
+            var table = $("#table").val();
+            var status = $("#status").val();
+            var timeoforder = $("#timeoforder").val();
+            var now = $("#now").val();
+			
+            
+            var markup = `<tr><td><label class="container"></span></label></td><td>` + ordername + "</td><td>" + serviceid + "</td><td>" + table + "</td><td>" + status + "</td><td>" + timeoforder + "</td><td>" + now + "</td> </tr>";
+            $("table tbody").append(markup);
+        });
+        
+        
+    });  
+		</script>
+		<link href="service_index_style.css" rel="stylesheet" type="text/css" />
+	</head>
+	
+	<body>
+		<h1>New Orders</h1>
+		
+		<div class="bckg"></div>	
+		 <div id="mySidenav" class="sidenav">
+			 <a href="#" id="new_orders">New Orders</a>
+			 <a href="#" id="open_orders">Pending Orders</a>
+			 <a href="#" id="closed_orders">Delivered Orders</a>
+			 <a href="#" id="ready_serving">Changing Status from Ready To Serving</a>
+			 <a href="#" id="serving_delivered">Changing Status from Serving To Delivered</a>
+             <a href="#" id="personal_amount">Personal Amounts</a>
+			 <a href="login.html" id="logout">Logout<i class="fa fa-power-off" ></i></a>
+		 </div>
+		<div class="border">
+		<form>
+		
+        
+        
+		<input type="text" id="ordername" placeholder="New Order">
+		
+        <input type="button" class="add-row" value="Add order">
+    </form>
+    <table id="orderstable">
+        <thead>
+            <tr>
+                
+                <th>ID</th>
+				<th>Order</th>
+                <th>Service ID</th>
+                <th>Table</th>
+                <th>Status</th>
+                <th>Time of order</th>
+                <th>Date</th>
+                
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                
+                <td>1</td>
+				<td></td>
+                <td></td>
+				<td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                
+            </tr>
+			<tr>
+				
+                <td>2</td>
+				<td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+				<td></td>
+                
+            </tr>
+        </tbody>
+    </table>
+    
+		</div>				   
+	</body>
+</html>
