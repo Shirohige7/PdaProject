@@ -11,10 +11,10 @@
 		 $(document).ready(function(){
         $(".add-row").click(function(){
             var categoryname = $("#categoryname").val();
-            var categoryid = $("#categoryid").val();
+            var categoryid = $("#categoryid").val() ;
 			
             
-            var markup = `<tr><td><label class="container"><input type="checkbox" name="record"><span class="checkmark"></span></label></td><td>` + categoryid + "</td><td>" + categoryname + "</td></tr>";
+            var markup = `<tr><td><label class="container"><input type="checkbox" name="record"><span class="checkmark"></span></label></td><td>` + categoryid  + "</td><td>" + categoryname + "</td></tr>";
             $("table tbody").append(markup);
         });
         
@@ -40,7 +40,7 @@
 			 <a href="admin_p_category.html" id="products">Product Category</a>
 			 <a href="admin_catalog.html" id="catalog">Catalog</a>
 			 <a href="admin_order_service_per_day.html" id="serviceorders">Service orders per day</a>
-			 <a href="#" id="orders">Bussines orders per day</a>
+			 <a href="admin_bussines_orders.html" id="orders">Bussines orders per day</a>
 			 <a href="login.html" id="logout">Logout<i class="fa fa-power-off" ></i></a>
 		 </div>
 		<div class="border">
