@@ -10,15 +10,18 @@
 		<script>
 		 $(document).ready(function(){
         $(".add-row").click(function(){
-            var ordername = $("#ordername").val();
+            var order = document.getElementById("ordername").options[2].value;
             var serviceid = $("#serviceid").val();
             var table = $("#table").val();
             var status = "None";
-            var timeoforder = $("#timeoforder").val();
-            var now = $("#now").val();
-			
+            var price = document.getElementById("Pricetxt").value;
+            var timeoforder = document.getElementById("Timeoforder").value;
+            var today = new Date();
+            var now = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
+ 
+			+today.getDate()
             
-            var markup = `<tr><td><label class="container"></span></label></td><td>` + ordername + "</td><td>" + serviceid + "</td><td>" + table + "</td><td>" + status + "</td><td>" + timeoforder + "</td><td>" + now + "</td> </tr>";
+            var markup = `<tr><td><label class="container"></span></label></td><td>` + order + "</td><td>" + serviceid + "</td><td>" + table + "</td><td>" + status + "</td><td>" + price + "</td><td>" + timeoforder + "</td><td>" + now + "</td> </tr>";
             $("table tbody").append(markup);
         });
         
@@ -44,11 +47,37 @@
 		<div class="border">
 		<form>
 		
+        <input list="ordername" type="list"  placeholder="New order"> 
+            <datalist  id="ordername">
+       
+       <option value="Alcohol">
+       <option value="Food">
+       <option value="Coffee">
+       <option value="Dessert">
         
+          </datalist>
+            
+        <input  list="Tablelist" type="list"  placeholder="Table"> 
+           <datalist id="Tablelist">
+             
+               <option value="Μπαλκόνι1">
+               <option value="Μπαλκόνι2">
+               <option value="Σάλα1">
+               <option value="Σάλα2">       
+            
+            </datalist>
+            
+            
+        <input type="text" id="Pricetxt" placeholder="Price">
+        <input type="time" id="Timeoforder"> 
         
-		<input type="text" id="ordername" placeholder="New Order">
+            
+       
+   
+        
+	
 		
-        <input type="button" class="add-row" value="Add order">
+        <input type="button" class="add-row" value="Add order"> 
     </form>
     <table id="orderstable">
         <thead>
@@ -59,6 +88,7 @@
                 <th>Service ID</th>
                 <th>Table</th>
                 <th>Status</th>
+                <th>Price</th>
                 <th>Time of order</th>
                 <th>Date</th>
                 
