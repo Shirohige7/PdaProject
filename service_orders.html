@@ -18,8 +18,7 @@
             var timeoforder = document.getElementById("Timeoforder").value;
             var today = new Date();
             var now = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
- 
-			+today.getDate()
+			
             
             var markup = `<tr><td><label class="container"></span></label></td><td>` + order + "</td><td>" + serviceid + "</td><td>" + table + "</td><td>" + status + "</td><td>" + price + "</td><td>" + timeoforder + "</td><td>" + now + "</td> </tr>";
             $("table tbody").append(markup);
@@ -28,7 +27,7 @@
         
     });  
 		</script>
-		<link href="service_index_style.css" rel="stylesheet" type="text/css" />
+		<link href="service_orders_style.css" rel="stylesheet" type="text/css" />
 	</head>
 	
 	<body>
@@ -36,8 +35,8 @@
 		
 		<div class="bckg"></div>	
 		 <div id="mySidenav" class="sidenav">
-			 <a href="#" id="new_orders">New Orders</a>
-			 <a href="#" id="open_orders">Pending Orders</a>
+			 <a href="service_orders.html" id="new_orders">New Orders</a>
+			 <a href="service_pending.html" id="open_orders">Pending Orders</a>
 			 <a href="#" id="closed_orders">Delivered Orders</a>
 			 <a href="#" id="ready_serving">Changing Status from Ready To Serving</a>
 			 <a href="#" id="serving_delivered">Changing Status from Serving To Delivered</a>
@@ -70,13 +69,6 @@
             
         <input type="text" id="Pricetxt" placeholder="Price">
         <input type="time" id="Timeoforder"> 
-        
-            
-       
-   
-        
-	
-		
         <input type="button" class="add-row" value="Add order"> 
     </form>
     <table id="orderstable">

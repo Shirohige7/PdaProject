@@ -3,7 +3,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Admin Page Products</title>
+		<title>Pending Orders</title>
 		<script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
 		<script  src="./jQuery/jquery-3.3.1.min.js"></script>
     	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -28,55 +28,62 @@
         });
     });  
 		</script>
-		<link href="admin_category.css" rel="stylesheet" type="text/css" />
+		<link href="service_pending_style.css" rel="stylesheet" type="text/css" />
 	</head>
 	
 	<body>
-		<h1>Category</h1>
+		<h1>Pending Orders</h1>
 		
 		<div class="bckg"></div>	
 		 <div id="mySidenav" class="sidenav">
-			 <a href="admin_users.html" id="user">Users</a>
-			 <a href="admin_p_category.html" id="products">Product Category</a>
-			 <a href="admin_catalog.html" id="catalog">Catalog</a>
-			 <a href="admin_order_service_per_day.html" id="serviceorders">Service orders per day</a>
-			 <a href="admin_bussines_orders.html" id="orders">Bussines orders per day</a>
+			 <a href="service_orders.html" id="new_orders">New Orders</a>
+			 <a href="service_pending.html" id="open_orders">Pending Orders</a>
+			 <a href="#" id="closed_orders">Delivered Orders</a>
+			 <a href="#" id="ready_serving">Changing Status from Ready To Serving</a>
+			 <a href="#" id="serving_delivered">Changing Status from Serving To Delivered</a>
+             <a href="#" id="personal_amount">Personal Amounts</a>
 			 <a href="login.html" id="logout">Logout<i class="fa fa-power-off" ></i></a>
 		 </div>
 		<div class="border">
 		<form>
-		
-        
-        
-		<input type="text" id="categoryname" placeholder="Product Category">
-		
-        <input type="button" class="add-row" value="Add Category">
     </form>
     <table id="userstable">
         <thead>
             <tr>
-                <th>Select</th>
                 <th>ID</th>
-				<th>Category</th>
+                <th>Order</th>
+				<th>Table</th>
+                <th>Status</th>
+                <th>Price</th>
+                <th>Time of order</th>
+                
                 
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><label class="container"><input type="checkbox" name="record"><span class="checkmark"></span></label></td>
+
                 <td>1</td>
-				<td>Alcohol</td>
+				<td>Burger</td>
+                <td>Σάλα1</td>
+                <td>PRERARATION</td>
+                <td>9$</td>
+                <td>15:30</td>
 				
             </tr>
 			<tr>
-				<td><label class="container"><input type="checkbox" name="record"><span class="checkmark"></span></label></td>
+				
                 <td>2</td>
-				<td>Food</td>
+				<td>Cupa Libre</td>
+                <td>Μπαλκόνι2</td>
+                <td>PRERARATION</td>
+                <td>7$</td>
+                <td>20:40</td>
 				
             </tr>
         </tbody>
     </table>
-    <button type="button" class="delete-row">Delete Category</button>
+    
 		</div>				   
 	</body>
 </html>
