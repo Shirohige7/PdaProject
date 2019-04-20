@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Preparation Orders</title>
+		<script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
+		<script  src="./jQuery/jquery-3.3.1.min.js"></script>
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script>
+		 $(document).ready(function(){
+        $(".add-row").click(function(){
+            var categoryname = $("#categoryname").val();
+            var categoryid = $("#categoryid").val() ;
+			
+            
+            var markup = `<tr><td><label class="container"><input type="checkbox" name="record"><span class="checkmark"></span></label></td><td>` + categoryid  + "</td><td>" + categoryname + "</td></tr>";
+            $("table tbody").append(markup);
+        });
+        
+        
+    });  
+		</script>
+		<link href="kitchen_preparation_style.css" rel="stylesheet" type="text/css" />
+	</head>
+	
+	<body>
+		<h1>Preparation Orders</h1>
+		
+		<div class="bckg"></div>	
+		 <div id="mySidenav" class="sidenav">
+			 <a href="kitchen_preparation.html" id="preparation_orders">Preparation Orders</a>
+             <a href="changing_to_ready.html" id="change_status">Changing status from Preparation to Ready</a>
+			 <a href="login.html" id="logout">Logout<i class="fa fa-power-off" ></i></a>
+		 </div>
+		<div class="border">
+		<form>
+    </form>
+    <table id="preparationtable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Order</th>
+				<th>Table</th>
+                <th>Status</th>
+                <th>Price</th>
+                <th>Time of order</th>
+                <th>Date of order</th>
+                
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+
+                <td>1</td>
+				<td>Burger</td>
+                <td>Σάλα1</td>
+                <td>PRERARATION</td>
+                <td>9$</td>
+                <td>15:30</td>
+                <td>15-3-2019</td>
+				
+            </tr>
+			<tr>
+				
+                <td>2</td>
+				<td>Cupa Libre</td>
+                <td>Μπαλκόνι2</td>
+                <td>PREPARATION</td>
+                <td>7$</td>
+                <td>20:40</td>
+                <td>23-2-2019</td>
+				
+            </tr>
+            <tr>
+
+                <td>3</td>
+				<td>Freddo Espresso</td>
+                <td>Σάλα2</td>
+                <td>PREPARATION</td>
+                <td>4$</td>
+                <td>10:30</td>
+                <td>19-1-2019</td>
+				
+            </tr>
+        </tbody>
+    </table>
+    
+		</div>				   
+	</body>
+</html>
