@@ -173,7 +173,7 @@ background: -ms-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1)
 #closedtable td{
 	//background-color: white;
 }
-#closedtable td, #userstable th {
+#closedtable td, #closedtable th {
   
   padding: 15px;
   

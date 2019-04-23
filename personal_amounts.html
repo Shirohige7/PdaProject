@@ -3,11 +3,11 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Changing status from Serving to Delivered</title>
+		<title>Personal Amounts</title>
 		<script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
 		<script  src="./jQuery/jquery-3.3.1.min.js"></script>
     	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<script type="text/javascript">
+		<script>
 		 $(document).ready(function(){
         $(".add-row").click(function(){
             var categoryname = $("#categoryname").val();
@@ -18,27 +18,21 @@
             $("table tbody").append(markup);
         });
         
-        // Find and change selected table cell
-        $(".change-row").click(function(){
+        // Find and remove selected table rows
+        $(".delete-row").click(function(){
             $("table tbody").find('input[name="record"]').each(function(){
-                
-                
-                
             	if($(this).is(":checked")){
-                   $(this).childrens('td:eq(4)').innerHTML = "DELIVERED";
-                  
-                 
-                 
+                    $(this).parents("tr").remove();
                 }
             });
         });
     });  
 		</script>
-		<link href="changing_to_delivered.css" rel="stylesheet" type="text/css" />
+		<link href="personal_amounts_style.css" rel="stylesheet" type="text/css" />
 	</head>
 	
 	<body>
-		<h1>Change status from serving to delivered</h1>
+		<h1>Personal Amounts</h1>
 		
 		<div class="bckg"></div>	
 		 <div id="mySidenav" class="sidenav">
@@ -52,17 +46,10 @@
 		 </div>
 		<div class="border">
 		<form>
-		
-        
-        
-		
-		
-    
     </form>
-    <table id="servingtable">
+    <table id="amountstable">
         <thead>
             <tr>
-                <th>Select</th>
                 <th>ID</th>
                 <th>Order</th>
 				<th>Table</th>
@@ -72,35 +59,38 @@
                 <th>Date of order</th>
                 <th>Time of deliver</th>
                 
+                
+                
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><label class="container"><input type="checkbox" name="record"><span class="checkmark"></span></label></td>
+
                 <td>1</td>
-				<td>Cupa Libre</td>
-                <td>Μπαλκόνι2</td>
-                <td>SERVING</td>
-                <td>7$</td>
-                <td>20:40</td>
-                <td>23-2-2019</td>
+				<td>Burger</td>
+                <td>Σάλα1</td>
+                <td>DELIVERED</td>
+                <td>9$</td>
+                <td>15:30</td>
+                <td>19-5-2018</td>
+                <td>15:45</td>
+                
 				
             </tr>
 			<tr>
-				<td><label class="container"><input type="checkbox" name="record"><span class="checkmark"></span></label></td>
+				
                 <td>2</td>
-				<td>Freddo Espresso</td>
-                <td>Σάλα2</td>
-                <td>SERVING</td>
-                <td>4$</td>
-                <td>10:30</td>
-                <td>19-1-2019</td>
-				
-				
+				<td>Cupa Libre</td>
+                <td>Μπαλκόνι2</td>
+                <td>DELIVERED</td>
+                <td>7$</td>
+                <td>20:40</td>
+                <td>25-2-2019</td>
+				<td>21:00</td>
             </tr>
         </tbody>
     </table>
-    <button type="button" class="change-row">DELIVERED</button>
+    
 		</div>				   
 	</body>
 </html>
