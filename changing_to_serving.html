@@ -9,20 +9,38 @@
     	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<script>
 		 $(document).ready(function(){
-        $(".add-row").click(function(){
+       /* $(".add-row").click(function(){
             var categoryname = $("#categoryname").val();
             var categoryid = $("#categoryid").val() ;
 			
             
             var markup = `<tr><td><label class="container"><input type="checkbox" name="record"><span class="checkmark"></span></label></td><td>` + categoryid  + "</td><td>" + categoryname + "</td></tr>";
             $("table tbody").append(markup);
-        });
+        }); */
         
         // Find and change selected table cell
         $(".change-row").click(function(){
             $("table tbody").find('input[name="record"]').each(function(){
+                
+               
+                
+                if($(this).is(":checked")){
+                      $('#status').html('SERVING');
+                    
+    
+                }
+ 
+        
+                
+            }
+                
+ 
+            
+        }
+                
+                
             	if($(this).is(":checked")){
-                   $(this).parents("tr").remove(); 
+                  readytable.replaceChild('SERVING', readytable.$(this).children[4]);
                 }
             });
         });
@@ -68,23 +86,23 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <tr id="row_1">
                 <td><label class="container"><input type="checkbox" name="record"><span class="checkmark"></span></label></td>
                 <td>1</td>
 				<td>Cupa Libre</td>
                 <td>Μπαλκόνι2</td>
-                <td>READY</td>
+                <td id="status">READY</td>
                 <td>7$</td>
                 <td>20:40</td>
                 <td>23-2-2019</td>
 				
             </tr>
-			<tr>
+			<tr id=row_2>
 				<td><label class="container"><input type="checkbox" name="record"><span class="checkmark"></span></label></td>
                 <td>2</td>
 				<td>Freddo Espresso</td>
                 <td>Σάλα2</td>
-                <td>READY</td>
+                <td id="status">READY</td>
                 <td>4$</td>
                 <td>10:30</td>
                 <td>19-1-2019</td>
